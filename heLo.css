@@ -1,0 +1,405 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+#name_logo{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#logo_name{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#profile_log{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  overflow: hidden;
+}
+#profile_log img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#links{
+  display: flex ;
+  gap: 3rem;
+}
+
+#links a{
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+#links a:hover {
+  color: #ffdd57; /* Aap apna manpasand rang yahan daal sakte hain */
+}
+
+#links a::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0); /* Shuru mein line ki width 0 hogi */
+  height: 2px; /* Line ki motai */
+  bottom: -5px;
+  left: 0;
+  background-color: #ffdd57; /* Line ka rang */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out; /* Smooth slide-out effect */
+}
+
+#links a:hover:after {
+  transform: scaleX(1); /* Line poori width le legi */
+  transform-origin: bottom left;
+}
+
+
+/* Main Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 80px 10%;
+    overflow: hidden;
+}
+
+/* Left Side Content */
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-content h2 {
+    font-size: 35px;
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* Projects Button */
+.hero-content a {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+    
+}
+
+.hero-content a:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
+
+/* Right Side Image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 2px solid rgba(15, 12, 12, 0.15);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+    transition: 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.3);
+}
+
+
+
+
+
+/* Poore Section Ka Style */
+.hero-cards-section {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f8fafc; /* Halka gray background */
+}
+
+/* Laptop Fixed Width Container (1140px fixed for laptops) */
+.cards-container {
+  width: 1140px; 
+  display: flex;
+  flex-direction: row; /* Hamesha ek line mein rahenge, niche nahi aayenge */
+  gap: 30px; /* Cards ke darmiyan ka fasla */
+}
+
+/* Single Card Structure */
+.custom-card {
+  width: 360px; /* Fixed width taake laptop par size barabar rahe */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.custom-card:hover {
+  transform: translateY(-5px); /* Card thoda upar uthega */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons Ka Style */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* Har card ka alag icon background color */
+.card-projects .card-icon { background-color: #dbeafe; }
+.card-about .card-icon { background-color: #dcfce7; }
+.card-contact .card-icon { background-color: #f3e8ff; }
+
+/* Text Styles */
+.card-title {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.card-desc {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+/* Links Ka Style */
+.card-link {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Har card ke link ka alag color */
+.card-projects .card-link { color: #2563eb; }
+.card-about .card-link { color: #16a34a; }
+.card-contact .card-link { color: #9333ea; }
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+
+.cards-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 80px 10%;
+}
+
+/* Individual Card */
+.card {
+    flex: 1;
+    max-width: 350px;
+    padding: 35px 25px;
+    text-align: center;
+
+    /* Glass Effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    transition: 0.3s ease;
+}
+
+/* Card Heading */
+.card h2 {
+    font-size: 26px;
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+/* Card Paragraph */
+.card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* Card Button */
+.card a {
+    display: inline-block;
+    padding: 12px 22px;
+
+    color: #ffffff;
+    background: rgba(56, 189, 248, 0.15);
+
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+/* Button Hover */
+.card a:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+/* Card Hover */
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.12);
+}
+
+.footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 50px 10% 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* Name */
+.footer-content h2 {
+    font-size: 28px;
+    color: #38bdf8;
+}
+
+/* Developer Text */
+.footer-content p {
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+/* Social Links */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #38bdf8;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #94a3b8;
+}
